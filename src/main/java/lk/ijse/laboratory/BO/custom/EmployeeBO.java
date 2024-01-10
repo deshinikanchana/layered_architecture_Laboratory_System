@@ -12,8 +12,8 @@ public interface EmployeeBO extends SuperBO {
     List<employeeDto> loadAllEmployees() throws SQLException, ClassNotFoundException;
     List<designationDto> loadAllDesignations() throws SQLException, ClassNotFoundException;
     boolean SaveEmployee(employeeDto dto) throws SQLException, ClassNotFoundException;
-    employeeDto SearchEmployee(String code, String nic) throws SQLException, ClassNotFoundException;
-    designationDto SearchDesignation(String code, String nic) throws SQLException, ClassNotFoundException;
+    employeeDto SearchEmployee(String column, String value) throws SQLException, ClassNotFoundException;
+    designationDto SearchDesignation(String column, String value) throws SQLException, ClassNotFoundException;
     boolean UpdateEmployee(employeeDto dto) throws SQLException, ClassNotFoundException;
     boolean DeleteEmployee(String id) throws SQLException, ClassNotFoundException;
 }

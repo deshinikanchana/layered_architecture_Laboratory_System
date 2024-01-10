@@ -11,7 +11,7 @@ public interface DesignationBO extends SuperBO {
     List<designationDto> loadAllDesignations() throws SQLException, ClassNotFoundException;
     int getEmpCount(String jobId) throws SQLException, ClassNotFoundException;
     boolean SaveDesignation(designationDto dto) throws SQLException, ClassNotFoundException;
-    designationDto SearchDesignation(String code, String nic) throws SQLException, ClassNotFoundException;
+    designationDto SearchDesignation(String column, String value) throws SQLException, ClassNotFoundException;
     boolean UpdateDesignation(designationDto dto) throws SQLException, ClassNotFoundException;
     boolean DeleteDesignation(String id) throws SQLException, ClassNotFoundException;
 }

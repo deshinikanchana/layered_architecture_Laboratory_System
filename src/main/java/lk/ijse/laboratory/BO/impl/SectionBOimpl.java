@@ -38,8 +38,8 @@ public class SectionBOimpl implements SectionBO {
     }
 
     @Override
-    public sectionDto SearchSection(String code, String nic) throws SQLException, ClassNotFoundException {
-        section sec = SecDao.Search(code,nic);
+    public sectionDto SearchSection(String column, String value) throws SQLException, ClassNotFoundException {
+        section sec = SecDao.Search(column,value);
         return new sectionDto(sec.getSecId(),sec.getSecName(),sec.getConsultant());
     }
 

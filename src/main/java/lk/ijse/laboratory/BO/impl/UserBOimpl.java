@@ -33,8 +33,8 @@ public class UserBOimpl implements UserBO {
     }
 
     @Override
-    public userDto SearchUser(String code, String nic) throws SQLException, ClassNotFoundException {
-        user us = dao.Search(code,nic);
+    public userDto SearchUser(String column, String value) throws SQLException, ClassNotFoundException {
+        user us = dao.Search(column,value);
         return new userDto(us.getUserId(),us.getUserName(),us.getUserType(),us.getPassword(),us.getEmail());
     }
 }

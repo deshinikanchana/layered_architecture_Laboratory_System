@@ -16,8 +16,8 @@ public class testDAOimpl implements testDAO {
 
 
     @Override
-    public test Search(String code, String id) throws SQLException, ClassNotFoundException {
-        ResultSet res = SQLUtil.execute("SELECT * FROM test WHERE " + code +" = ?",id);
+    public test Search(String col, String value) throws SQLException, ClassNotFoundException {
+        ResultSet res = SQLUtil.execute("SELECT * FROM test WHERE " + col +" = ?", value);
         res.next();
         return new test(res.getString(1),res.getString(2),res.getString(3),res.getString(4),res.getFloat(5),res.getString(6),res.getString(7));
     }

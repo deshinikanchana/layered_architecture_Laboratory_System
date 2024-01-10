@@ -13,12 +13,13 @@ public interface ReportsBO extends SuperBO {
     List<ptTestDetailsDto> loadTestIds(String Id) throws SQLException, ClassNotFoundException;
     List<subTestDto> getAllsubTests(String text) throws SQLException, ClassNotFoundException;
     List<refferenceRangesDto> getRangeList(String subId) throws SQLException, ClassNotFoundException;
-    prescriptionDto SearchPrescription(String code, String nic) throws SQLException, ClassNotFoundException;
-    patientDto SearchPatients(String code, String nic) throws SQLException, ClassNotFoundException;
-    testDto SearchTest(String code, String nic) throws SQLException, ClassNotFoundException;
-    machineDto SearchMachines(String code, String nic) throws SQLException, ClassNotFoundException;
-    sectionDto SearchSections(String code, String nic) throws SQLException, ClassNotFoundException;
-    collectingCenterDto SearchCenters(String code, String nic) throws SQLException, ClassNotFoundException;
-    resultDto SearchResults(String code, String nic) throws SQLException, ClassNotFoundException;
+    prescriptionDto SearchPrescription(String column, String value) throws SQLException, ClassNotFoundException;
+    patientDto SearchPatients(String column, String value) throws SQLException, ClassNotFoundException;
+    ptTestDetailsDto SearchReports(String column, String value) throws SQLException, ClassNotFoundException;
+    testDto SearchTest(String column, String value) throws SQLException, ClassNotFoundException;
+    machineDto SearchMachines(String column, String value) throws SQLException, ClassNotFoundException;
+    sectionDto SearchSections(String column, String value) throws SQLException, ClassNotFoundException;
+    collectingCenterDto SearchCenters(String column, String value) throws SQLException, ClassNotFoundException;
+    resultDto SearchResults(String column, String value) throws SQLException, ClassNotFoundException;
     boolean UpdateReports(ptTestDetailsDto dto) throws SQLException, ClassNotFoundException;
 }

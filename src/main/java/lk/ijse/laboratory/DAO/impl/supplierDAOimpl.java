@@ -67,8 +67,8 @@ public class supplierDAOimpl implements supplierDAO {
     }
 
     @Override
-    public supplier Search(String code,String Name) throws SQLException, ClassNotFoundException {
-        ResultSet res = SQLUtil.execute("SELECT * FROM supplier WHERE " + code + " = ?",Name);
+    public supplier Search(String col, String value) throws SQLException, ClassNotFoundException {
+        ResultSet res = SQLUtil.execute("SELECT * FROM supplier WHERE " + col + " = ?", value);
         res.next();
         return new supplier(res.getString(1),res.getString(2),res.getString(3),res.getString(4),res.getString(5));
     }

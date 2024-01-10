@@ -49,8 +49,8 @@ public class AttendanceBOimpl implements AttendanceBO {
     }
 
     @Override
-    public employeeDto SearchEmployee(String code, String nic) throws SQLException, ClassNotFoundException {
-        employee em =eDao.Search(code,nic);
+    public employeeDto SearchEmployee(String column, String value) throws SQLException, ClassNotFoundException {
+        employee em =eDao.Search(column,value);
         return new employeeDto(em.getEmpId(),em.getJobId(),em.getUserId(),em.getName(),em.getNic(),em.getAddress(),em.getEmail(),em.getTelNo());
     }
 

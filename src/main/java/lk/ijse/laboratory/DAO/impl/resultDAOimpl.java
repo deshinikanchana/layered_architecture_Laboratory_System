@@ -2,7 +2,6 @@ package lk.ijse.laboratory.DAO.impl;
 
 import lk.ijse.laboratory.DAO.SQLUtil;
 import lk.ijse.laboratory.DAO.custom.resultDAO;
-import lk.ijse.laboratory.Dto.resultDto;
 import lk.ijse.laboratory.Entity.result;
 
 import java.sql.*;
@@ -25,8 +24,8 @@ public class resultDAOimpl implements resultDAO {
     }
 
     @Override
-    public result Search(String subId, String presId) throws SQLException, ClassNotFoundException {
-        ResultSet res = SQLUtil.execute("SELECT * FROM result WHERE subTestId = ? AND presId = ?",subId,presId);
+    public result Search(String col, String value) throws SQLException, ClassNotFoundException {
+        ResultSet res = SQLUtil.execute("SELECT * FROM result WHERE subTestId = ? AND presId = ?", col, value);
         res.next();
         return new result(res.getString(1),res.getString(2),res.getString(3));
     }

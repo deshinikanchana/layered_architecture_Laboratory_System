@@ -2,7 +2,6 @@ package lk.ijse.laboratory.DAO.impl;
 
 import lk.ijse.laboratory.DAO.SQLUtil;
 import lk.ijse.laboratory.DAO.custom.patientDAO;
-import lk.ijse.laboratory.Dto.patientDto;
 import lk.ijse.laboratory.Entity.patient;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -71,8 +70,8 @@ public class patientDAOimpl implements patientDAO {
     }
 
     @Override
-    public patient Search(String code,String id) throws SQLException, ClassNotFoundException {
-        ResultSet rst = SQLUtil.execute("SELECT * FROM patient WHERE ptId = ?",id);
+    public patient Search(String col, String value) throws SQLException, ClassNotFoundException {
+        ResultSet rst = SQLUtil.execute("SELECT * FROM patient WHERE ptId = ?", value);
         rst.next();
         return new patient(rst.getString(1),rst.getString(2),rst.getString(3),rst.getString(4),rst.getString(5),rst.getString(6),rst.getString(7),rst.getString(8));
     }

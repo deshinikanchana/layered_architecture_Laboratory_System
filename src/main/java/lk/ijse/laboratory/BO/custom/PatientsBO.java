@@ -12,7 +12,7 @@ public interface PatientsBO extends SuperBO {
     List<patientDto> loadAllPatients() throws SQLException, ClassNotFoundException;
     List<collectingCenterDto> loadAllCenters() throws SQLException, ClassNotFoundException;
     boolean SavePatient(patientDto dto) throws SQLException, ClassNotFoundException;
-    patientDto SearchPatient(String code, String nic) throws SQLException, ClassNotFoundException;
+    patientDto SearchPatient(String column, String value) throws SQLException, ClassNotFoundException;
     boolean UpdatePatient(patientDto dto) throws SQLException, ClassNotFoundException;
     boolean DeletePatient(String id) throws SQLException, ClassNotFoundException;
 }

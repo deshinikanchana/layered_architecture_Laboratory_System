@@ -29,20 +29,20 @@ public class ResultBOimpl implements ResultsBO {
     }
 
     @Override
-    public subTestDto SearchSubTest(String code, String nic) throws SQLException, ClassNotFoundException {
-        subTest st = subDao.Search(code,nic);
+    public subTestDto SearchSubTest(String column, String value) throws SQLException, ClassNotFoundException {
+        subTest st = subDao.Search(column,value);
         return new subTestDto(st.getTestId(),st.getSubTestId(),st.getName());
     }
 
     @Override
-    public resultDto SearchResults(String code, String nic) throws SQLException, ClassNotFoundException {
-        result res = resDao.Search(code,nic);
+    public resultDto SearchResults(String column, String value) throws SQLException, ClassNotFoundException {
+        result res = resDao.Search(column,value);
         return new resultDto(res.getPresId(),res.getSubTestId(),res.getResult());
     }
 
     @Override
     public List<subTestDto> getAllsubTests(String text) throws SQLException, ClassNotFoundException {
-        List<subTest> sList = subDao.loadAll();
+        List<subTest> sList = subDao.getAllsubTests(text);
         List<subTestDto> subList = new ArrayList<>();
         for(subTest st:sList){
             subList.add(new subTestDto(st.getTestId(),st.getSubTestId(),st.getName()));

@@ -47,14 +47,14 @@ public class StockUsageBOimpl implements StockUsageBO {
     }
 
     @Override
-    public testDto SearchTest(String code, String nic) throws SQLException, ClassNotFoundException {
-        test tst = TDao.Search(code,nic);
+    public testDto SearchTest(String column, String value) throws SQLException, ClassNotFoundException {
+        test tst = TDao.Search(column,value);
         return new testDto(tst.getTestId(),tst.getSecId(),tst.getTest(),tst.getEstimatedTime(),tst.getPrice(),tst.getSampleType(),tst.getMachineId());
     }
 
     @Override
-    public stockItemDto SearchItem(String code, String nic) throws SQLException, ClassNotFoundException {
-        stockItem st =  IDao.Search(code,nic);
+    public stockItemDto SearchItem(String column, String value) throws SQLException, ClassNotFoundException {
+        stockItem st =  IDao.Search(column,value);
         return new stockItemDto(st.getItemCode(),st.getUserId(),st.getDescription(),st.getQtyOnHand(),st.getCategory(),st.getWarningLevel());
     }
 }

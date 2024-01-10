@@ -12,9 +12,9 @@ public interface PrescriptionsBO extends SuperBO {
     List<testDto> loadAllTests() throws SQLException, ClassNotFoundException;
     boolean SavePrescription(prescriptionDto dto) throws SQLException, ClassNotFoundException;
     boolean SaveReport(ptTestDetailsDto dto) throws SQLException, ClassNotFoundException;
-    patientDto SearchPatient(String code, String nic) throws SQLException, ClassNotFoundException;
-    collectingCenterDto SearchCenter(String code, String nic) throws SQLException, ClassNotFoundException;
-    testDto SearchTest(String code, String nic) throws SQLException, ClassNotFoundException;
+    patientDto SearchPatient(String column, String value) throws SQLException, ClassNotFoundException;
+    collectingCenterDto SearchCenter(String column, String value) throws SQLException, ClassNotFoundException;
+    testDto SearchTest(String column, String value) throws SQLException, ClassNotFoundException;
     boolean UpdateStock(stockUsageDto dto) throws SQLException, ClassNotFoundException;
     prescriptionDto SearchPrescriptionById(String id) throws SQLException, ClassNotFoundException;
     List<stockUsageDto> getUsages(String testId) throws SQLException, ClassNotFoundException;

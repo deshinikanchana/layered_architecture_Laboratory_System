@@ -38,8 +38,8 @@ public class CollectingCenterBOimpl implements CollectingCenterBO {
     }
 
     @Override
-    public collectingCenterDto SearchCenter(String code, String nic) throws SQLException, ClassNotFoundException {
-        collectingCenter cc = dao.Search(code,nic);
+    public collectingCenterDto SearchCenter(String column, String value) throws SQLException, ClassNotFoundException {
+        collectingCenter cc = dao.Search(column,value);
         return new collectingCenterDto(cc.getCcId(),cc.getCenterName(),cc.getAddress(),cc.getTelNo(),cc.getEmail());
     }
 

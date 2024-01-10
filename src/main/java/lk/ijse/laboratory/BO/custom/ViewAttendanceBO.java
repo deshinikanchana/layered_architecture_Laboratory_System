@@ -13,8 +13,8 @@ public interface ViewAttendanceBO extends SuperBO {
     List<attendanceDto> loadAllAttendances() throws SQLException, ClassNotFoundException;
     float calculateTotalHours(String id,int month) throws SQLException, ClassNotFoundException;
     int getCount(String empId, int mon) throws SQLException, ClassNotFoundException;
-    employeeDto SearchEmployee(String code, String nic) throws SQLException, ClassNotFoundException;
-    attendanceDto SearchAttendances(String code, String nic) throws SQLException, ClassNotFoundException;
-    designationDto SearchDesignations(String code, String nic) throws SQLException, ClassNotFoundException;
+    employeeDto SearchEmployee(String column, String value) throws SQLException, ClassNotFoundException;
+    attendanceDto SearchAttendances(String column, String value) throws SQLException, ClassNotFoundException;
+    designationDto SearchDesignations(String column, String value) throws SQLException, ClassNotFoundException;
 
 }

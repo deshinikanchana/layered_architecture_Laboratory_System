@@ -51,20 +51,20 @@ public class ViewAttendanceBOimpl implements ViewAttendanceBO {
     }
 
     @Override
-    public employeeDto SearchEmployee(String code, String nic) throws SQLException, ClassNotFoundException {
-        employee emp = EmpDao.Search(code,nic);
+    public employeeDto SearchEmployee(String column, String value) throws SQLException, ClassNotFoundException {
+        employee emp = EmpDao.Search(column,value);
         return new employeeDto(emp.getEmpId(),emp.getJobId(),emp.getUserId(),emp.getName(),emp.getNic(),emp.getAddress(),emp.getEmail(),emp.getTelNo());
     }
 
     @Override
-    public attendanceDto SearchAttendances(String code, String nic) throws SQLException, ClassNotFoundException {
-        attendance at = AtDao.Search(code,nic);
+    public attendanceDto SearchAttendances(String column, String value) throws SQLException, ClassNotFoundException {
+        attendance at = AtDao.Search(column,value);
         return new attendanceDto(at.getEmpId(),at.getDate(),at.getInTime(),at.getOutTime(),at.getStatus());
     }
 
     @Override
-    public designationDto SearchDesignations(String code, String nic) throws SQLException, ClassNotFoundException {
-        designation ds = DesDao.Search(code,nic);
+    public designationDto SearchDesignations(String column, String value) throws SQLException, ClassNotFoundException {
+        designation ds = DesDao.Search(column,value);
         return new designationDto(ds.getJboId(),ds.getJobTitle(),ds.getWorkingHoursPerMonth(),ds.getBasicSalary(),ds.getOtPaymentsPerHour());
     }
 }

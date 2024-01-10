@@ -56,14 +56,14 @@ public class TestBOimpl implements TestsBO {
     }
 
     @Override
-    public sectionDto SearchSection(String code, String nic) throws SQLException, ClassNotFoundException {
-        section sec = SecDao.Search(code,nic);
+    public sectionDto SearchSection(String column, String value) throws SQLException, ClassNotFoundException {
+        section sec = SecDao.Search(column,value);
         return new sectionDto(sec.getSecId(),sec.getSecName(),sec.getConsultant());
     }
 
     @Override
-    public machineDto SearchMachine(String code, String nic) throws SQLException, ClassNotFoundException {
-        machine mc = MDao.Search(code,nic);
+    public machineDto SearchMachine(String column, String value) throws SQLException, ClassNotFoundException {
+        machine mc = MDao.Search(column,value);
         return new machineDto(mc.getMachineId(),mc.getSecId(),mc.getMachineName(),mc.getStatus());
     }
 
@@ -73,8 +73,8 @@ public class TestBOimpl implements TestsBO {
     }
 
     @Override
-    public testDto SearchTest(String code, String nic) throws SQLException, ClassNotFoundException {
-        test tst = TDao.Search(code,nic);
+    public testDto SearchTest(String column, String value) throws SQLException, ClassNotFoundException {
+        test tst = TDao.Search(column,value);
         return new testDto(tst.getTestId(),tst.getSecId(),tst.getTest(),tst.getEstimatedTime(),tst.getPrice(),tst.getSampleType(),tst.getMachineId());
     }
 

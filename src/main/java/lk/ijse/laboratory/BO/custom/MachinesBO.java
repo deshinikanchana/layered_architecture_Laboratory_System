@@ -12,8 +12,8 @@ public interface MachinesBO extends SuperBO {
     List<machineDto> loadAllMachines() throws SQLException, ClassNotFoundException;
     List<sectionDto> loadAllSections() throws SQLException, ClassNotFoundException;
     boolean SaveMachine(machineDto dto) throws SQLException, ClassNotFoundException;
-    machineDto SearchMachine(String code, String nic) throws SQLException, ClassNotFoundException;
-    sectionDto SearchSection(String code, String nic) throws SQLException, ClassNotFoundException;
+    machineDto SearchMachine(String column, String value) throws SQLException, ClassNotFoundException;
+    sectionDto SearchSection(String column, String value) throws SQLException, ClassNotFoundException;
     boolean UpdateMachine(machineDto dto) throws SQLException, ClassNotFoundException;
     boolean DeleteMachine(String id) throws SQLException, ClassNotFoundException;
 }

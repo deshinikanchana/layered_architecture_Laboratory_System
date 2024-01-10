@@ -43,7 +43,7 @@ public class instructionDAOimpl implements instructionDAO {
     }
 
     @Override
-    public instruction Search(String code, String nic) throws SQLException, ClassNotFoundException {
+    public instruction Search(String col, String value) throws SQLException, ClassNotFoundException {
         return null;
     }
 

@@ -88,8 +88,8 @@ public class stockItemDAOimpl implements stockItemDAO {
     }
 
     @Override
-    public stockItem Search(String code,String id) throws SQLException, ClassNotFoundException {
-        ResultSet res = SQLUtil.execute( "SELECT * FROM stock_item WHERE " + code + " = ?",id);
+    public stockItem Search(String col, String value) throws SQLException, ClassNotFoundException {
+        ResultSet res = SQLUtil.execute( "SELECT * FROM stock_item WHERE " + col + " = ?", value);
         res.next();
         return new stockItem(res.getString(1),res.getString(2),res.getString(3),res.getInt(4),res.getString(5),res.getInt(6));
     }

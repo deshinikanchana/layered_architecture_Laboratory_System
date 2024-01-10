@@ -2,7 +2,6 @@ package lk.ijse.laboratory.DAO.impl;
 
 import lk.ijse.laboratory.DAO.SQLUtil;
 import lk.ijse.laboratory.DAO.custom.userDAO;
-import lk.ijse.laboratory.Dto.userDto;
 import lk.ijse.laboratory.Entity.user;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -68,8 +67,8 @@ public class userDAOimpl implements userDAO {
     }
 
     @Override
-    public user Search(String Code,String value) throws SQLException, ClassNotFoundException {
-        ResultSet res = SQLUtil.execute("SELECT * FROM user WHERE " + Code + " = ?",value);
+    public user Search(String col, String value) throws SQLException, ClassNotFoundException {
+        ResultSet res = SQLUtil.execute("SELECT * FROM user WHERE " + col + " = ?",value);
         res.next();
         return new user(res.getString(1),res.getString(2),res.getString(3),res.getString(4),res.getString(5));
     }

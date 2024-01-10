@@ -11,8 +11,8 @@ import java.sql.SQLException;
 public class ForgotPasswordBOimpl implements ForgotPasswordBO {
     userDAO dao = (userDAO) DAOFactory.getDaoFactory().getDAO(DAOFactory.DAOTypes.USER);
     @Override
-    public userDto SearchUser(String code, String nic) throws SQLException, ClassNotFoundException {
-        user US = dao.Search(code,nic);
+    public userDto SearchUser(String column, String value) throws SQLException, ClassNotFoundException {
+        user US = dao.Search(column,value);
         return new userDto(US.getUserId(),US.getUserName(), US.getUserType(),US.getPassword(),US.getEmail());
     }
 }

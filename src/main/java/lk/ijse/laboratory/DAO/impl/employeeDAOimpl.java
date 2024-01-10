@@ -2,8 +2,6 @@ package lk.ijse.laboratory.DAO.impl;
 
 import lk.ijse.laboratory.DAO.SQLUtil;
 import lk.ijse.laboratory.DAO.custom.employeeDAO;
-import lk.ijse.laboratory.Dto.employeeDto;
-import lk.ijse.laboratory.Entity.attendance;
 import lk.ijse.laboratory.Entity.employee;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -60,8 +58,8 @@ public class employeeDAOimpl implements employeeDAO {
     }
 
     @Override
-    public employee Search(String code, String nic) throws SQLException, ClassNotFoundException {
-        ResultSet resultSet = SQLUtil.execute("SELECT * FROM employee WHERE " + code + "  = ?",nic);
+    public employee Search(String col, String value) throws SQLException, ClassNotFoundException {
+        ResultSet resultSet = SQLUtil.execute("SELECT * FROM employee WHERE " + col + "  = ?", value);
         resultSet.next();
            return new employee(resultSet.getString(1),resultSet.getString(2),resultSet.getString(3),resultSet.getString(4),resultSet.getString(5),resultSet.getString(6),resultSet.getString(7),resultSet.getString(8));
     }

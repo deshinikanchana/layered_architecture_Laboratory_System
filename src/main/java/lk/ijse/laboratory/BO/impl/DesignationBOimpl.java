@@ -38,8 +38,8 @@ public class DesignationBOimpl implements DesignationBO {
     }
 
     @Override
-    public designationDto SearchDesignation(String code, String nic) throws SQLException, ClassNotFoundException {
-        designation ds = dao.Search(code,nic);
+    public designationDto SearchDesignation(String column, String value) throws SQLException, ClassNotFoundException {
+        designation ds = dao.Search(column,value);
         return new designationDto(ds.getJboId(),ds.getJobTitle(),ds.getWorkingHoursPerMonth(),ds.getBasicSalary(),ds.getOtPaymentsPerHour());
     }
 

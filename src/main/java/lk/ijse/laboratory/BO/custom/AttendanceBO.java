@@ -12,6 +12,6 @@ public interface AttendanceBO extends SuperBO {
     List<employeeDto> loadAllEmployees() throws SQLException, ClassNotFoundException;
     boolean SaveAttendance(attendanceDto dto) throws SQLException, ClassNotFoundException;
     attendanceDto searchAttendancesById(String id) throws SQLException, ClassNotFoundException;
-    employeeDto SearchEmployee(String code, String nic) throws SQLException, ClassNotFoundException;
+    employeeDto SearchEmployee(String column, String value) throws SQLException, ClassNotFoundException;
     boolean Update(attendanceDto dto) throws SQLException, ClassNotFoundException;
 }

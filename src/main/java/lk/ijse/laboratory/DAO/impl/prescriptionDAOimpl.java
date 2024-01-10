@@ -2,7 +2,6 @@ package lk.ijse.laboratory.DAO.impl;
 
 import lk.ijse.laboratory.DAO.SQLUtil;
 import lk.ijse.laboratory.DAO.custom.prescriptionDAO;
-import lk.ijse.laboratory.Dto.prescriptionDto;
 import lk.ijse.laboratory.Entity.prescription;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -68,8 +67,8 @@ public class prescriptionDAOimpl implements prescriptionDAO {
     }
 
     @Override
-    public prescription Search(String code,String id) throws SQLException, ClassNotFoundException {
-        ResultSet rst = SQLUtil.execute("SELECT * FROM prescription WHERE presId = ?",id);
+    public prescription Search(String col, String value) throws SQLException, ClassNotFoundException {
+        ResultSet rst = SQLUtil.execute("SELECT * FROM prescription WHERE presId = ?", value);
         rst.next();
         return new prescription(rst.getString(1),rst.getString(2),rst.getString(3),rst.getFloat(4),rst.getFloat(5));
     }

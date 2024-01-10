@@ -14,8 +14,8 @@ public interface SalaryBO extends SuperBO {
     List<employeeDto> loadAllEmployees() throws SQLException, ClassNotFoundException;
     float calculateTotalHours(String id,int month) throws SQLException, ClassNotFoundException;
     boolean SaveSalary(salaryDto dto) throws SQLException, ClassNotFoundException;
-    employeeDto SearchEmployees(String code, String nic) throws SQLException, ClassNotFoundException;
-    designationDto SearchDesignation(String code, String nic) throws SQLException, ClassNotFoundException;
+    employeeDto SearchEmployees(String column, String value) throws SQLException, ClassNotFoundException;
+    designationDto SearchDesignation(String column, String value) throws SQLException, ClassNotFoundException;
     int getCount(String empId, int mon) throws SQLException, ClassNotFoundException;
 
 }

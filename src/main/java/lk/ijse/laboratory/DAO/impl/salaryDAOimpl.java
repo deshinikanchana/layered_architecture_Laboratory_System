@@ -56,7 +56,7 @@ public class salaryDAOimpl implements salaryDAO {
     }
 
     @Override
-    public salary Search(String code, String nic) throws SQLException, ClassNotFoundException {
+    public salary Search(String col, String value) throws SQLException, ClassNotFoundException {
         return null;
     }
 

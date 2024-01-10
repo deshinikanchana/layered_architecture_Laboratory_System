@@ -2,7 +2,6 @@ package lk.ijse.laboratory.DAO.impl;
 
 import lk.ijse.laboratory.DAO.SQLUtil;
 import lk.ijse.laboratory.DAO.custom.sectionDAO;
-import lk.ijse.laboratory.Dto.sectionDto;
 import lk.ijse.laboratory.Entity.section;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -78,8 +77,8 @@ public class sectionDAOimpl  implements sectionDAO {
     }
 
     @Override
-    public section Search(String code,String id) throws SQLException, ClassNotFoundException {
-        ResultSet res = SQLUtil.execute("SELECT * FROM section WHERE " + code + "  = ?",id);
+    public section Search(String col, String value) throws SQLException, ClassNotFoundException {
+        ResultSet res = SQLUtil.execute("SELECT * FROM section WHERE " + col + "  = ?", value);
         res.next();
         return new section(res.getString(1),res.getString(2),res.getString(3));
     }

@@ -12,6 +12,6 @@ public interface OrdersBO extends SuperBO {
     List<stockItemDto> loadAllItems() throws SQLException, ClassNotFoundException;
     List<supplierDto> loadAllSuppliers() throws SQLException, ClassNotFoundException;
     String generateNextOrderId() throws SQLException, ClassNotFoundException;
-    stockItemDto SearchItem(String code, String nic) throws SQLException, ClassNotFoundException;
+    stockItemDto SearchItem(String column, String value) throws SQLException, ClassNotFoundException;
     boolean SaveOrder(itemOrderDetailDto dto) throws SQLException, ClassNotFoundException;
 }

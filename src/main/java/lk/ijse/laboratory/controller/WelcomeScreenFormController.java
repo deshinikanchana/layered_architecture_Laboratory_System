@@ -12,13 +12,14 @@ import javax.mail.MessagingException;
 import java.io.IOException;
 
 
+
 public class WelcomeScreenFormController {
     public static int verify;
     @FXML
     private AnchorPane root;
     public void onActionBtnToLoginForm(ActionEvent event) throws IOException, MessagingException {
         verify = 2;
-        AnchorPane anchorPane = FXMLLoader.load(getClass().getResource("/lk.ijse.laboratory/assests/login_form.fxml"));
+       AnchorPane anchorPane = FXMLLoader.load(getClass().getResource("/lk.ijse.laboratory/assests/login_form.fxml"));
         Stage stage = (Stage) root.getScene().getWindow();
 
         stage.setScene(new Scene(anchorPane));

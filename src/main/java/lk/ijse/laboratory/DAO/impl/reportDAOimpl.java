@@ -2,7 +2,6 @@ package lk.ijse.laboratory.DAO.impl;
 
 import lk.ijse.laboratory.DAO.SQLUtil;
 import lk.ijse.laboratory.DAO.custom.reportDAO;
-import lk.ijse.laboratory.Dto.ptTestDetailsDto;
 import lk.ijse.laboratory.Entity.ptTestDetails;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -23,8 +22,10 @@ public class reportDAOimpl implements reportDAO {
     }
 
     @Override
-    public ptTestDetails Search(String code, String nic) throws SQLException, ClassNotFoundException {
-        return null;
+    public ptTestDetails Search(String col, String value) throws SQLException, ClassNotFoundException {
+        ResultSet res = SQLUtil.execute("SELECT * FROM patient_test_details WHERE presId = ? AND testId = ? ", col, value);
+        res.next();
+        return new ptTestDetails(res.getDate(1),res.getString(2),res.getString(3),res.getString(4),res.getString(5));
     }
 
     @Override

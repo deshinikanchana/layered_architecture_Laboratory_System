@@ -2,7 +2,6 @@ package lk.ijse.laboratory.DAO.impl;
 
 import lk.ijse.laboratory.DAO.SQLUtil;
 import lk.ijse.laboratory.DAO.custom.collectingCenterDAO;
-import lk.ijse.laboratory.Dto.collectingCenterDto;
 import lk.ijse.laboratory.Entity.collectingCenter;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -78,8 +77,8 @@ public class collectingCenterDAOimpl implements collectingCenterDAO {
     }
 
     @Override
-    public collectingCenter Search(String code,String id) throws SQLException, ClassNotFoundException {
-        ResultSet rst =SQLUtil.execute("SELECT * FROM collecting_center WHERE ccId = ?",id);
+    public collectingCenter Search(String col, String value) throws SQLException, ClassNotFoundException {
+        ResultSet rst =SQLUtil.execute("SELECT * FROM collecting_center WHERE ccId = ?", value);
         rst.next();
         return new collectingCenter(rst.getString(1),rst.getString(2),rst.getString(3),rst.getString(4),rst.getString(5));
     }

@@ -2,7 +2,6 @@ package lk.ijse.laboratory.DAO.impl;
 
 import lk.ijse.laboratory.DAO.SQLUtil;
 import lk.ijse.laboratory.DAO.custom.machineDAO;
-import lk.ijse.laboratory.Dto.machineDto;
 import lk.ijse.laboratory.Entity.machine;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -49,8 +48,8 @@ public class machineDAOimpl implements machineDAO {
     }
 
     @Override
-    public machine Search(String code, String mcName) throws SQLException, ClassNotFoundException {
-        ResultSet rst = SQLUtil.execute("SELECT * FROM machine WHERE " + code + " = ?",mcName);
+    public machine Search(String col, String value) throws SQLException, ClassNotFoundException {
+        ResultSet rst = SQLUtil.execute("SELECT * FROM machine WHERE " + col + " = ?", value);
         rst.next();
         return new machine(rst.getString(1), rst.getString(2),rst.getString(3), rst.getString(4) );
 

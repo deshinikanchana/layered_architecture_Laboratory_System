@@ -189,3 +189,19 @@ CREATE TABLE result(
 );
 
 
+create Table instruction(
+    no int(10) primary key,
+    testId VARCHAR(10),
+    instructions VARCHAR(200),
+    FOREIGN KEY (testId) REFERENCES test (testId) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+CREATE TABLE user_temp(
+	userId VARCHAR(10),
+	userName VARCHAR (20),
+	userType VARCHAR (10),
+	password VARCHAR (20),
+    email VARCHAR(50)
+    date DATE ,
+    time TIME
+);

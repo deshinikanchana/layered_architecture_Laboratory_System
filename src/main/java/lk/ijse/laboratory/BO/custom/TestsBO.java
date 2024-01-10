@@ -13,10 +13,10 @@ public interface TestsBO extends SuperBO {
     List<testDto> loadAllTests() throws SQLException, ClassNotFoundException;
     List<machineDto> loadAllMachines() throws SQLException, ClassNotFoundException;
     List<sectionDto> loadAllSections() throws SQLException, ClassNotFoundException;
-    sectionDto SearchSection(String code, String nic) throws SQLException, ClassNotFoundException;
-    machineDto SearchMachine(String code, String nic) throws SQLException, ClassNotFoundException;
+    sectionDto SearchSection(String column, String value) throws SQLException, ClassNotFoundException;
+    machineDto SearchMachine(String column, String value) throws SQLException, ClassNotFoundException;
     boolean SaveTest(testDto dto) throws SQLException, ClassNotFoundException;
-    testDto SearchTest(String code, String nic) throws SQLException, ClassNotFoundException;
+    testDto SearchTest(String column, String value) throws SQLException, ClassNotFoundException;
     boolean UpdateTest(testDto dto) throws SQLException, ClassNotFoundException;
     boolean DeleteTest(String id) throws SQLException, ClassNotFoundException;
 }

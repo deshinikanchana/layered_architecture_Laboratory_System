@@ -10,8 +10,8 @@ import java.util.List;
 
 public interface ResultsBO extends SuperBO {
     boolean SaveResult(resultDto dto) throws SQLException, ClassNotFoundException;
-    subTestDto SearchSubTest(String code, String nic) throws SQLException, ClassNotFoundException;
-    resultDto SearchResults(String code, String nic) throws SQLException, ClassNotFoundException;
+    subTestDto SearchSubTest(String column, String value) throws SQLException, ClassNotFoundException;
+    resultDto SearchResults(String column, String value) throws SQLException, ClassNotFoundException;
     List<subTestDto> getAllsubTests(String text) throws SQLException, ClassNotFoundException;
     List<refferenceRangesDto> getRangeList(String subId) throws SQLException, ClassNotFoundException;
 }

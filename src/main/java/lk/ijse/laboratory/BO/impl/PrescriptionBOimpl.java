@@ -54,20 +54,20 @@ public class PrescriptionBOimpl implements PrescriptionsBO {
     }
 
     @Override
-    public patientDto SearchPatient(String code, String nic) throws SQLException, ClassNotFoundException {
-        patient pt = pttDao.Search(code,nic);
+    public patientDto SearchPatient(String column, String value) throws SQLException, ClassNotFoundException {
+        patient pt = pttDao.Search(column,value);
         return new patientDto(pt.getPtId(),pt.getUserId(),pt.getCcId(),pt.getName(),pt.getGender(),pt.getDob(),pt.getTelNo(),pt.getEmail());
     }
 
     @Override
-    public collectingCenterDto SearchCenter(String code, String nic) throws SQLException, ClassNotFoundException {
-        collectingCenter cc = ccDao.Search(code,nic);
+    public collectingCenterDto SearchCenter(String column, String value) throws SQLException, ClassNotFoundException {
+        collectingCenter cc = ccDao.Search(column,value);
         return new collectingCenterDto(cc.getCcId(),cc.getCenterName(),cc.getAddress(),cc.getTelNo(),cc.getEmail());
     }
 
     @Override
-    public testDto SearchTest(String code, String nic) throws SQLException, ClassNotFoundException {
-        test tst = tDao.Search(code,nic);
+    public testDto SearchTest(String column, String value) throws SQLException, ClassNotFoundException {
+        test tst = tDao.Search(column,value);
         return new testDto(tst.getTestId(),tst.getSecId(),tst.getTest(),tst.getEstimatedTime(),tst.getPrice(),tst.getSampleType(),tst.getMachineId());
     }
 

@@ -13,7 +13,7 @@ public interface RefferenceRangesBO extends SuperBO {
     List<subTestDto> loadAllSubTest() throws SQLException, ClassNotFoundException;
     List<testDto> loadAllTest() throws SQLException, ClassNotFoundException;
     List<refferenceRangesDto> loadAllRefferenceRanges() throws SQLException, ClassNotFoundException;
-    subTestDto SearchSubTest(String code, String nic) throws SQLException, ClassNotFoundException;
+    subTestDto SearchSubTest(String column, String value) throws SQLException, ClassNotFoundException;
     boolean SaveRefferenceRanges(refferenceRangesDto dto) throws SQLException, ClassNotFoundException;
     boolean UpdateRefferenceRanges(refferenceRangesDto dto) throws SQLException, ClassNotFoundException;
     boolean DeleteRefferenceRanges(String id) throws SQLException, ClassNotFoundException;

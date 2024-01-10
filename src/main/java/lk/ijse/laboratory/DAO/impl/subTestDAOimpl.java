@@ -27,8 +27,8 @@ public class subTestDAOimpl implements subTestDAO {
     }
 
     @Override
-    public subTest Search(String code,String subTestId) throws SQLException, ClassNotFoundException {
-        ResultSet res = SQLUtil.execute("SELECT * FROM sub_test Where subTestId = ?",subTestId);
+    public subTest Search(String col, String value) throws SQLException, ClassNotFoundException {
+        ResultSet res = SQLUtil.execute("SELECT * FROM sub_test Where subTestId = ?", value);
         res.next();
         return new subTest(res.getString(1),res.getString(2),res.getString(3));
     }

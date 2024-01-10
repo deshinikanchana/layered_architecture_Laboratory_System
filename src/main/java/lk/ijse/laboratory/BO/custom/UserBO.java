@@ -10,6 +10,6 @@ public interface UserBO extends SuperBO {
     String generateNextUserId() throws SQLException, ClassNotFoundException;
     List<userDto> loadAllUsers() throws SQLException, ClassNotFoundException;
     boolean SaveUser(userDto dto) throws SQLException, ClassNotFoundException;
-    userDto SearchUser(String code, String nic) throws SQLException, ClassNotFoundException;
+    userDto SearchUser(String column, String value) throws SQLException, ClassNotFoundException;
 
 }

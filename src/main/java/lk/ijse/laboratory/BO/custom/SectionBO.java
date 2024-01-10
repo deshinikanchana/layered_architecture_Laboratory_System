@@ -11,7 +11,7 @@ public interface SectionBO extends SuperBO {
     List<sectionDto> loadAllSections() throws SQLException, ClassNotFoundException;
     int getTestCount(String secId) throws SQLException, ClassNotFoundException;
     boolean SaveSection(sectionDto dto) throws SQLException, ClassNotFoundException;
-    sectionDto SearchSection(String code, String nic) throws SQLException, ClassNotFoundException;
+    sectionDto SearchSection(String column, String value) throws SQLException, ClassNotFoundException;
     boolean UpdateSection(sectionDto dto) throws SQLException, ClassNotFoundException;
     boolean DeleteSection(String id) throws SQLException, ClassNotFoundException;
 }

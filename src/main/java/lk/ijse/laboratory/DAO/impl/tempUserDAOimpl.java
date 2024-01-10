@@ -45,7 +45,7 @@ public class tempUserDAOimpl implements tempUserDAO {
     }
 
     @Override
-    public user Search(String code, String nic) throws SQLException, ClassNotFoundException {
+    public user Search(String col, String value) throws SQLException, ClassNotFoundException {
         return null;
     }
 

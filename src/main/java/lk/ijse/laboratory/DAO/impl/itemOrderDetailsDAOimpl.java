@@ -42,7 +42,7 @@ public class itemOrderDetailsDAOimpl implements itemOrderDetailsDAO {
     }
 
     @Override
-    public itemOrderDetail Search(String code, String nic) throws SQLException, ClassNotFoundException {
+    public itemOrderDetail Search(String col, String value) throws SQLException, ClassNotFoundException {
         return null;
     }
 

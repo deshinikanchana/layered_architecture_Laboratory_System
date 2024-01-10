@@ -2,7 +2,6 @@ package lk.ijse.laboratory.DAO.impl;
 
 import lk.ijse.laboratory.DAO.SQLUtil;
 import lk.ijse.laboratory.DAO.custom.designationDAO;
-import lk.ijse.laboratory.Dto.designationDto;
 import lk.ijse.laboratory.Entity.designation;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -78,8 +77,8 @@ public class designationDAOimpl implements designationDAO {
     }
 
     @Override
-    public designation Search(String code,String id) throws SQLException, ClassNotFoundException {
-        ResultSet rst = SQLUtil.execute("SELECT * FROM job_role WHERE jobId = ?",id);
+    public designation Search(String col, String value) throws SQLException, ClassNotFoundException {
+        ResultSet rst = SQLUtil.execute("SELECT * FROM job_role WHERE jobId = ?", value);
         rst.next();
             return new designation(rst.getString(1),rst.getString(2),rst.getInt(3),rst.getFloat(4),rst.getFloat(5));
     }

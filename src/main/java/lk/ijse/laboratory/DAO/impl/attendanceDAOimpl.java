@@ -62,8 +62,8 @@ public class attendanceDAOimpl implements attendanceDAO {
     }
 
     @Override
-    public attendance Search(String code,String id) throws SQLException, ClassNotFoundException {
-        ResultSet rst = SQLUtil.execute("SELECT * FROM attendance WHERE empId = ?",id);
+    public attendance Search(String col, String value) throws SQLException, ClassNotFoundException {
+        ResultSet rst = SQLUtil.execute("SELECT * FROM attendance WHERE empId = ?", value);
         rst.next();
         return new attendance(rst.getString(1),rst.getDate(2),rst.getTime(3),rst.getTime(4),rst.getString(5));
     }

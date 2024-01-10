@@ -51,8 +51,8 @@ public class PatientsBOimpl implements PatientsBO {
     }
 
     @Override
-    public patientDto SearchPatient(String code, String nic) throws SQLException, ClassNotFoundException {
-        patient pt = ptDao.Search(code,nic);
+    public patientDto SearchPatient(String column, String value) throws SQLException, ClassNotFoundException {
+        patient pt = ptDao.Search(column,value);
         return new patientDto(pt.getPtId(),pt.getUserId(),pt.getCcId(),pt.getName(),pt.getGender(),pt.getDob(),pt.getTelNo(),pt.getEmail());
     }
 

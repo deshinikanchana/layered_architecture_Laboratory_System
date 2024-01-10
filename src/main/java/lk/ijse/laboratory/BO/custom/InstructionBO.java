@@ -16,6 +16,6 @@ public interface InstructionBO extends SuperBO {
     boolean SaveInstructions(instructionDto dto) throws SQLException, ClassNotFoundException;
     boolean UpdateInstructions(instructionDto dto) throws SQLException, ClassNotFoundException;
     boolean DeleteInstructions(String id) throws SQLException, ClassNotFoundException;
-    testDto SearchTest(String code, String nic) throws SQLException, ClassNotFoundException;
+    testDto SearchTest(String column, String value) throws SQLException, ClassNotFoundException;
 
 }

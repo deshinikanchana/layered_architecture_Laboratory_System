@@ -10,7 +10,7 @@ import java.util.List;
 
 public interface TestDetailsBO extends SuperBO {
     List<testDto> loadAllTest() throws SQLException, ClassNotFoundException;
-    sectionDto SearchSection(String code, String nic) throws SQLException, ClassNotFoundException;
-    testDto SearchTest(String code, String nic) throws SQLException, ClassNotFoundException;
+    sectionDto SearchSection(String column, String value) throws SQLException, ClassNotFoundException;
+    testDto SearchTest(String column, String value) throws SQLException, ClassNotFoundException;
     ArrayList<String> getInstructions(String id) throws SQLException, ClassNotFoundException;
 }

@@ -62,7 +62,7 @@ public class OrderSaveDAOimpl implements OrderSaveDAO {
     }
 
     @Override
-    public itemOrderDetail Search(String code, String nic) throws SQLException, ClassNotFoundException {
+    public itemOrderDetail Search(String col, String value) throws SQLException, ClassNotFoundException {
         return null;
     }
 

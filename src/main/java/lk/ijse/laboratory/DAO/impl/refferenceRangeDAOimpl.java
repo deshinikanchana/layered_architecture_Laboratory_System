@@ -49,7 +49,7 @@ public class refferenceRangeDAOimpl implements refferenceRangeDAO {
     }
 
     @Override
-    public refferenceRanges Search(String code, String nic) throws SQLException, ClassNotFoundException {
+    public refferenceRanges Search(String col, String value) throws SQLException, ClassNotFoundException {
         return null;
     }
 

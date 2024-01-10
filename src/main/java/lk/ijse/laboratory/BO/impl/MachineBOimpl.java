@@ -47,14 +47,14 @@ public class MachineBOimpl implements MachinesBO {
     }
 
     @Override
-    public machineDto SearchMachine(String code, String nic) throws SQLException, ClassNotFoundException {
-        machine entity = mDao.Search(code,nic);
+    public machineDto SearchMachine(String column, String value) throws SQLException, ClassNotFoundException {
+        machine entity = mDao.Search(column,value);
         return new machineDto(entity.getMachineId(),entity.getSecId(),entity.getMachineName(),entity.getStatus());
     }
 
     @Override
-    public sectionDto SearchSection(String code, String nic) throws SQLException, ClassNotFoundException {
-        section entity = sDao.Search(code,nic);
+    public sectionDto SearchSection(String column, String value) throws SQLException, ClassNotFoundException {
+        section entity = sDao.Search(column,value);
         return new sectionDto(entity.getSecId(),entity.getSecName(),entity.getConsultant());
     }
 

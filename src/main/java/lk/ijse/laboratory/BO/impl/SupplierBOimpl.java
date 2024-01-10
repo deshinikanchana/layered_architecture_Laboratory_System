@@ -40,8 +40,8 @@ public class SupplierBOimpl implements SuppliersBO {
     }
 
     @Override
-    public supplierDto SearchSupplier(String code, String nic) throws SQLException, ClassNotFoundException {
-        supplier sup = dao.Search(code,nic);
+    public supplierDto SearchSupplier(String column, String value) throws SQLException, ClassNotFoundException {
+        supplier sup = dao.Search(column,value);
         return new supplierDto(sup.getSupId(),sup.getName(),sup.getTelNo(),sup.getEmail(),sup.getCategory());
     }
 

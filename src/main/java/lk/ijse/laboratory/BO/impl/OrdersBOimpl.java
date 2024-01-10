@@ -47,8 +47,8 @@ public class OrdersBOimpl implements OrdersBO {
     }
 
     @Override
-    public stockItemDto SearchItem(String code, String nic) throws SQLException, ClassNotFoundException {
-        stockItem st = itemDao.Search(code,nic);
+    public stockItemDto SearchItem(String column, String value) throws SQLException, ClassNotFoundException {
+        stockItem st = itemDao.Search(column,value);
         return new stockItemDto(st.getItemCode(),st.getUserId(),st.getDescription(),st.getQtyOnHand(),st.getCategory(),st.getWarningLevel());
     }
 

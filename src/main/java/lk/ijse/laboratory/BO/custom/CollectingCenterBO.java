@@ -11,7 +11,7 @@ public interface CollectingCenterBO extends SuperBO {
     List<collectingCenterDto> loadAllCenters() throws SQLException, ClassNotFoundException;
     int getSampleCount(String CcId) throws SQLException, ClassNotFoundException;
     boolean SaveCenter(collectingCenterDto dto) throws SQLException, ClassNotFoundException;
-    collectingCenterDto SearchCenter(String code, String nic) throws SQLException, ClassNotFoundException;
+    collectingCenterDto SearchCenter(String column, String value) throws SQLException, ClassNotFoundException;
     boolean UpdateCenter(collectingCenterDto dto) throws SQLException, ClassNotFoundException;
     boolean DeleteCenter(String id) throws SQLException, ClassNotFoundException;
 }

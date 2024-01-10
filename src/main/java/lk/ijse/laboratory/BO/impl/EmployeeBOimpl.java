@@ -47,14 +47,14 @@ public class EmployeeBOimpl implements EmployeeBO {
     }
 
     @Override
-    public employeeDto SearchEmployee(String code, String nic) throws SQLException, ClassNotFoundException {
-        employee emp = dao.Search(code,nic);
+    public employeeDto SearchEmployee(String column, String value) throws SQLException, ClassNotFoundException {
+        employee emp = dao.Search(column,value);
         return new employeeDto(emp.getEmpId(),emp.getJobId(),emp.getUserId(),emp.getName(),emp.getNic(),emp.getAddress(),emp.getEmail(),emp.getTelNo());
     }
 
     @Override
-    public designationDto SearchDesignation(String code, String nic) throws SQLException, ClassNotFoundException {
-        designation DS = DesDao.Search(code,nic);
+    public designationDto SearchDesignation(String column, String value) throws SQLException, ClassNotFoundException {
+        designation DS = DesDao.Search(column,value);
         return new designationDto(DS.getJboId(),DS.getJobTitle(),DS.getWorkingHoursPerMonth(),DS.getBasicSalary(),DS.getOtPaymentsPerHour());
     }
 

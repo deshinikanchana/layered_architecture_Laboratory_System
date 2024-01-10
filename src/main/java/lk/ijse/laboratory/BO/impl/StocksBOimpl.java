@@ -33,8 +33,8 @@ public class StocksBOimpl implements StocksBO {
     }
 
     @Override
-    public stockItemDto SearchItem(String code, String nic) throws SQLException, ClassNotFoundException {
-        stockItem st = dao.Search(code,nic);
+    public stockItemDto SearchItem(String column, String value) throws SQLException, ClassNotFoundException {
+        stockItem st = dao.Search(column,value);
         return new stockItemDto(st.getItemCode(),st.getUserId(),st.getDescription(),st.getQtyOnHand(),st.getCategory(),st.getWarningLevel());
     }
 

@@ -62,14 +62,14 @@ public class SalaryBOimpl implements SalaryBO {
     }
 
     @Override
-    public employeeDto SearchEmployees(String code, String nic) throws SQLException, ClassNotFoundException {
-        employee emp = EDao.Search(code,nic);
+    public employeeDto SearchEmployees(String column, String value) throws SQLException, ClassNotFoundException {
+        employee emp = EDao.Search(column,value);
         return new employeeDto(emp.getEmpId(),emp.getJobId(),emp.getUserId(),emp.getName(),emp.getNic(),emp.getAddress(),emp.getEmail(),emp.getTelNo());
     }
 
     @Override
-    public designationDto SearchDesignation(String code, String nic) throws SQLException, ClassNotFoundException {
-        designation des = Desdao.Search(code,nic);
+    public designationDto SearchDesignation(String column, String value) throws SQLException, ClassNotFoundException {
+        designation des = Desdao.Search(column,value);
         return new designationDto(des.getJboId(),des.getJobTitle(),des.getWorkingHoursPerMonth(),des.getBasicSalary(),des.getOtPaymentsPerHour());
     }
 

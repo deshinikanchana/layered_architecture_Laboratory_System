@@ -95,6 +95,8 @@ public class ResultFormController {
            if (res != null) {
                txtResult.setText(res.getResult());
                txtResult.setEditable(false);
+           }else{
+               System.out.println("Empty");
            }
            txtResult.requestFocus();
     }

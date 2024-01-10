@@ -57,8 +57,8 @@ public class InstructionsBOimpl implements InstructionBO {
     }
 
     @Override
-    public testDto SearchTest(String code, String nic) throws SQLException, ClassNotFoundException {
-        test tst = TDao.Search(code,nic);
+    public testDto SearchTest(String column, String value) throws SQLException, ClassNotFoundException {
+        test tst = TDao.Search(column,value);
         return new testDto(tst.getTestId(),tst.getSecId(),tst.getTest(),tst.getEstimatedTime(),tst.getPrice(),tst.getSampleType(),tst.getMachineId());
     }
 

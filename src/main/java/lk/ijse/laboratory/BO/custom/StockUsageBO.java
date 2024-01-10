@@ -12,6 +12,6 @@ public interface StockUsageBO extends SuperBO {
     List<testDto> loadAllTests() throws SQLException, ClassNotFoundException;
     List<stockItemDto> loadAllItems() throws SQLException, ClassNotFoundException;
     boolean SaveUsage(stockUsageDto dto) throws SQLException, ClassNotFoundException;
-    testDto SearchTest(String code, String nic) throws SQLException, ClassNotFoundException;
-    stockItemDto SearchItem(String code, String nic) throws SQLException, ClassNotFoundException;
+    testDto SearchTest(String column, String value) throws SQLException, ClassNotFoundException;
+    stockItemDto SearchItem(String column, String value) throws SQLException, ClassNotFoundException;
 }

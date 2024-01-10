@@ -321,16 +321,20 @@ public class ReportsFormController {
         JasperViewer.viewReport(jasperPrint, false);
         JasperExportManager.exportReportToPdfFile(jasperPrint,"/home/kmgdk/intelij project/Medical-Laboratoey-Management-System/src/main/resources/testReports/Report.pdf");
         Date Dt = Date.valueOf(date);
-        ptTestDetailsDto dto = new ptTestDetailsDto(Dt, (String) cmbPresId.getValue(), (String) cmbTestCode.getValue(),"Report Ready",txtComment.getText());
-        boolean isOk = bo.UpdateReports(dto);
        if(PDto.getEmail()!= null) {
-           if (PRDto.getDuePayment() == 0) {
-            SendEmail(PDto.getName(), PDto.getEmail(), "Test Report","/home/kmgdk/intelij project/Medical-Laboratoey-Management-System/src/main/resources/testReports/Report.pdf" , 3);
-           } else {
-               SendEmail(PDto.getName(), PDto.getEmail(), "Report Alert", "Your Test Report is Ready !!!", 4);
+           ptTestDetailsDto rep = bo.SearchReports((String) cmbPresId.getValue(), (String) cmbTestCode.getValue());
+           if (rep.getStatus().equals("report Not Ready")) {
+               if (PRDto.getDuePayment() == 0) {
+                   SendEmail(PDto.getName(), PDto.getEmail(), "Test Report", "/home/kmgdk/intelij project/Medical-Laboratoey-Management-System/src/main/resources/testReports/Report.pdf", 3);
+               } else {
+                   SendEmail(PDto.getName(), PDto.getEmail(), "Report Alert", "Your Test Report is Ready !!!", 4);
+               }
            }
        }
-        clearFields();
+        ptTestDetailsDto dto = new ptTestDetailsDto(Dt, (String) cmbPresId.getValue(), (String) cmbTestCode.getValue(),"Report Ready",txtComment.getText());
+        boolean isOk = bo.UpdateReports(dto);
+        if(isOk)
+            clearFields();
     }
 
     public void onActionSubTestResults(ActionEvent event) throws IOException, SQLException {

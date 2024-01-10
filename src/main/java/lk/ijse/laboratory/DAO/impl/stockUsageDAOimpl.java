@@ -32,7 +32,7 @@ public class stockUsageDAOimpl implements stockUsageDAO {
     }
 
     @Override
-    public stockUsage Search(String code, String nic) throws SQLException, ClassNotFoundException {
+    public stockUsage Search(String col, String value) throws SQLException, ClassNotFoundException {
         return null;
     }
 

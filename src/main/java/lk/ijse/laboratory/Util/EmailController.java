@@ -19,8 +19,8 @@ public class EmailController {
         properties.put("mail.smtp.starttls.enable", true);
         properties.put("mail.transport.protocol", "smtp");
 
-        String userName = " ";
-        String password = " ";
+        String userName = "Your Email";
+        String password = "Your Password";
         String msg1 = "VERIFY IT'S YOU";
         String msg2 = "Enter The OTP Code Below Into The Suwasahana Medical Laboratory Management System To Reset Your System User Password.";
         String alert = "SECURITY ALERT !!!";

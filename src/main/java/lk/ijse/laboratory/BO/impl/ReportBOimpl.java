@@ -77,44 +77,50 @@ public class ReportBOimpl implements ReportsBO {
     }
 
     @Override
-    public prescriptionDto SearchPrescription(String code, String nic) throws SQLException, ClassNotFoundException {
-        prescription pr = PrDao.Search(code,nic);
+    public prescriptionDto SearchPrescription(String column, String value) throws SQLException, ClassNotFoundException {
+        prescription pr = PrDao.Search(column,value);
         return new prescriptionDto(pr.getPresId(),pr.getPtId(),pr.getRefferedBy(),pr.getTotalAmount(),pr.getDuePayment());
     }
 
     @Override
-    public patientDto SearchPatients(String code, String nic) throws SQLException, ClassNotFoundException {
-        patient pt = PtDao.Search(code,nic);
+    public patientDto SearchPatients(String column, String value) throws SQLException, ClassNotFoundException {
+        patient pt = PtDao.Search(column,value);
         return new patientDto(pt.getPtId(),pt.getUserId(),pt.getCcId(),pt.getName(),pt.getGender(),pt.getDob(),pt.getTelNo(),pt.getEmail());
     }
 
     @Override
-    public testDto SearchTest(String code, String nic) throws SQLException, ClassNotFoundException {
-        test tst = TDao.Search(code,nic);
+    public ptTestDetailsDto SearchReports(String column, String value) throws SQLException, ClassNotFoundException {
+        ptTestDetails pt = RepDao.Search(column,value);
+        return new ptTestDetailsDto(pt.getDate(),pt.getPresId(),pt.getTestId(),pt.getStatus(),pt.getComment());
+    }
+
+    @Override
+    public testDto SearchTest(String column, String value) throws SQLException, ClassNotFoundException {
+        test tst = TDao.Search(column,value);
         return new testDto(tst.getTestId(),tst.getSecId(),tst.getTest(),tst.getEstimatedTime(),tst.getPrice(),tst.getSampleType(),tst.getMachineId());
     }
 
     @Override
-    public machineDto SearchMachines(String code, String nic) throws SQLException, ClassNotFoundException {
-        machine entity =  MDao.Search(code,nic);
+    public machineDto SearchMachines(String column, String value) throws SQLException, ClassNotFoundException {
+        machine entity =  MDao.Search(column,value);
         return new machineDto(entity.getMachineId(),entity.getSecId(),entity.getMachineName(),entity.getStatus());
     }
 
     @Override
-    public sectionDto SearchSections(String code, String nic) throws SQLException, ClassNotFoundException {
-        section entity = SecDao.Search(code,nic);
+    public sectionDto SearchSections(String column, String value) throws SQLException, ClassNotFoundException {
+        section entity = SecDao.Search(column,value);
         return new sectionDto(entity.getSecId(),entity.getSecName(),entity.getConsultant());
     }
 
     @Override
-    public collectingCenterDto SearchCenters(String code, String nic) throws SQLException, ClassNotFoundException {
-        collectingCenter cc = dao.Search(code,nic);
+    public collectingCenterDto SearchCenters(String column, String value) throws SQLException, ClassNotFoundException {
+        collectingCenter cc = dao.Search(column,value);
         return new collectingCenterDto(cc.getCcId(),cc.getCenterName(),cc.getAddress(),cc.getTelNo(),cc.getEmail());
     }
 
     @Override
-    public resultDto SearchResults(String code, String nic) throws SQLException, ClassNotFoundException {
-        result re = ResDao.Search(code,nic);
+    public resultDto SearchResults(String column, String value) throws SQLException, ClassNotFoundException {
+        result re = ResDao.Search(column,value);
         return new resultDto(re.getPresId(),re.getSubTestId(),re.getResult());
     }
 
